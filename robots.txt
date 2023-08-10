@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kalionix.github.io/sitemap.xml
