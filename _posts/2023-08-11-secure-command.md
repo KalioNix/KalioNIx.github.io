@@ -1,7 +1,7 @@
 ---
 title: '[ Java ] OS Command Injection'
 categories: ['Secure Coding', 'Java']
-date: "2023-08-11 01:00:00"
+date: "2023-08-11 04:00:00"
 tag: ['Secure Coding', 'Java']
 ---
 ## **취약한 코드**
@@ -31,7 +31,7 @@ public class CommandiController {
 	public String testCommandInjection(HttpServletRequest request, HttpSession session){
 		StringBuffer buffer=new StringBuffer();
 		String data=request.getParameter("input");
-	
+
 	    if ( data != null  && data.equals("type")) {
 	    		data=data+" "+
 	    	            request.getSession().getServletContext().getRealPath("/")+

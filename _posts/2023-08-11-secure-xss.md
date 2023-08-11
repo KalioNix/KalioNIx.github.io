@@ -1,8 +1,8 @@
 ---
 title: '[ Java ] XSS 1'
 categories: ['Secure Coding', 'Java']
-date: 2023-08-11T10:55:30.696Z
-tag : ['Secure Coding', 'Java']
+date: "2023-08-11 02:00:00"
+tag: ['Secure Coding', 'Java']
 ---
 ## **취약한 코드**
 
