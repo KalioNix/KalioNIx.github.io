@@ -1,11 +1,11 @@
 ---
 title: '[ Java ] XSS 1'
-date: '2023-08-11'
+date: '2023-08-11T10:00:00Z'
 categories: ['Secure Coding', 'Java']
 tag : ['Secure Coding', 'Java']
 ---
-
 ## **취약한 코드**
+
 ---
 
 ```java
@@ -28,8 +28,8 @@ public class XSSController {
 		StringBuffer buffer=new StringBuffer();
 		String input=request.getParameter("data");
 		buffer.append(input);
-        return buffer.toString();	
-	}		
+        return buffer.toString();
+	}	
 }	 
 ```
 
@@ -37,6 +37,7 @@ public class XSSController {
 <br>
 
 ## **취약점 분석**
+
 ---
 
 ```
@@ -55,7 +56,9 @@ buffer.append(input);
 <br>
 
 ## **안전한 코드**
+
 ---
+
 ```java
 package kr.co.openeg.lab.test.controller;
 import java.io.IOException;
@@ -78,17 +81,17 @@ public class XSSControllerSec {
 
 		/** XSS 발생하지 않도록 filter를 적용해서 값이 응답되도록 코드를 수정하세요 */
 		buffer.append(filter(input));
-        return buffer.toString();	
+        return buffer.toString();
 	}
 
 	public String filter(String input) {
-	
+
 		/** 스크립트 실행을 예방하기 위해 < 과 > 문자에 대해 
 		 * HTML인코딩 처리하는 코드를 작성하세요 */
-		input.replaceAll("<","&lt;").replaceAll(">","&gt;");
+		input.replaceAll("<","<").replaceAll(">",">");
 		return input;
 	}
-		
+	
 }
 
 ```

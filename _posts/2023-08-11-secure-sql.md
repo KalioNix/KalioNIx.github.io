@@ -1,11 +1,11 @@
 ---
 title: '[ Java ] SQL Injection'
-date: '2023-08-11'
+date: '2023-08-11T09:00:00Z'
 categories: ['Secure Coding', 'Java']
 tag : ['Secure Coding', 'Java']
 ---
-
 ## **취약한 코드**
+
 ---
 
 ```java
@@ -26,7 +26,7 @@ public class DBRead {
 		Statement st=null;
 		ResultSet rs=null;
 		try {
-			con = EConnection.getConnection(this);	
+			con = EConnection.getConnection(this);
 			st = con.createStatement();
 			rs = st.executeQuery("select * from board_member where userid='"+id+"' and userpw='"+passwd+"'");
    		    if ( rs.next() ) {
@@ -37,11 +37,11 @@ public class DBRead {
 			// TODO Auto-generated catch block
 			result.append("요청처리에러발생");
 		}
-	
+
 		if ( rs != null ) try { rs.close(); }catch(SQLException e){}
 		if ( st != null ) try { st.close(); }catch(SQLException e){}
 		if ( con != null ) try { con.close(); }catch(SQLException e){}
-            
+          
 		return result.toString();
 	}
 }
@@ -79,9 +79,10 @@ class EConnection {
 <br>
 
 ## **취약점 분석**
+
 ---
 
-```rs = st.executeQuery("select * from board_member where userid='"+id+"' and userpw='"+passwd+"'");```
+``rs = st.executeQuery("select * from board_member where userid='"+id+"' and userpw='"+passwd+"'");``
 
 사용자로부터 입력받은 id와 passwd 값을 직접 문자열에 연결하여 SQL 쿼리를 생성하고 실행하고 있다.
 
@@ -97,6 +98,7 @@ class EConnection {
 <br>
 
 ## **안전한 코드**
+
 ---
 
 ```java
@@ -118,11 +120,11 @@ public class DBReadSec {
 		PreparedStatement ps=null;
 		ResultSet rs=null;
 		try {
-			con = EConnection2.getConnection(this);	
+			con = EConnection2.getConnection(this);
 
 			// st = con.createStatement();
 			sql = "select * from board_member where userid=? and userpw=?";
-   		    
+   		  
 			ps = con.prepareStatement(sql);
 			ps.setString(1, id);
 			ps.setString(2, passwd);
@@ -132,11 +134,11 @@ public class DBReadSec {
 		} catch (SQLException e1) {
 			result.append("요청처리에러발생");
 		}
-	
+
 		if ( rs != null ) try { rs.close(); }catch(SQLException e){}
 		if ( ps != null ) try { ps.close(); }catch(SQLException e){}
 		if ( con != null ) try { con.close(); }catch(SQLException e){}
-            
+          
 			return result.toString();
 	}
 }

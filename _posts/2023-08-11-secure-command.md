@@ -1,11 +1,11 @@
 ---
 title: '[ Java ] OS Command Injection'
-date: '2023-08-11'
+date: '2023-08-11T13:00:00Z'
 categories: ['Secure Coding', 'Java']
 tag: ['Secure Coding', 'Java']
 ---
-
 ## **취약한 코드**
+
 ---
 
 ```java
@@ -29,16 +29,16 @@ public class CommandiController {
 	@RequestMapping(value="/test/command_test.do", method = RequestMethod.POST)
 	@ResponseBody
 	public String testCommandInjection(HttpServletRequest request, HttpSession session){
-		StringBuffer buffer=new StringBuffer();	
+		StringBuffer buffer=new StringBuffer();
 		String data=request.getParameter("input");
-			
+		
 	    if ( data != null  && data.equals("type")) {
 	    		data=data+" "+
 	    	            request.getSession().getServletContext().getRealPath("/")+
 	    	            "file1.txt"; 
 	    		System.out.println(data);
 	    }
-    	
+  
 		Process process;
 		String osName = System.getProperty("os.name");
 		String[] cmd;
@@ -64,7 +64,7 @@ public class CommandiController {
 			e.printStackTrace();
 		} 
 			return buffer.toString();
-	}	
+	}
 }	 
 ```
 
@@ -72,9 +72,10 @@ public class CommandiController {
 <br>
 
 ## **취약점 분석**
+
 ---
 
-```process = Runtime.getRuntime().exec(cmd);```
+``process = Runtime.getRuntime().exec(cmd);``
 
 해당 코드에서 사용자의 입력을 검증하지 않고 명령어를 실행하고 있다.
 
@@ -90,6 +91,7 @@ public class CommandiController {
 <br>
 
 ## **안전한 코드**
+
 ---
 
 ```java
