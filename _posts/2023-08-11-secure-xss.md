@@ -1,6 +1,5 @@
 ---
 title: '[ Java ] XSS 1'
-date: '2023-08-11T10:00:00.000Z'
 categories: ['Secure Coding', 'Java']
 tag : ['Secure Coding', 'Java']
 ---
