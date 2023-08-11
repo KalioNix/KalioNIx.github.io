@@ -1,6 +1,7 @@
 ---
 title: '[ Java ] SQL Injection'
 categories: ['Secure Coding', 'Java']
+date: 2023-08-11T09:55:30.696Z
 tag : ['Secure Coding', 'Java']
 ---
 ## **취약한 코드**
@@ -40,7 +41,7 @@ public class DBRead {
 		if ( rs != null ) try { rs.close(); }catch(SQLException e){}
 		if ( st != null ) try { st.close(); }catch(SQLException e){}
 		if ( con != null ) try { con.close(); }catch(SQLException e){}
-          
+        
 		return result.toString();
 	}
 }
@@ -137,7 +138,7 @@ public class DBReadSec {
 		if ( rs != null ) try { rs.close(); }catch(SQLException e){}
 		if ( ps != null ) try { ps.close(); }catch(SQLException e){}
 		if ( con != null ) try { con.close(); }catch(SQLException e){}
-          
+        
 			return result.toString();
 	}
 }

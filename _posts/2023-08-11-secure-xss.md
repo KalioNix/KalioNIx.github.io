@@ -1,6 +1,7 @@
 ---
 title: '[ Java ] XSS 1'
 categories: ['Secure Coding', 'Java']
+date: 2023-08-11T10:55:30.696Z
 tag : ['Secure Coding', 'Java']
 ---
 ## **취약한 코드**
@@ -28,7 +29,7 @@ public class XSSController {
 		String input=request.getParameter("data");
 		buffer.append(input);
         return buffer.toString();
-	}	
+	}
 }	 
 ```
 
@@ -90,7 +91,7 @@ public class XSSControllerSec {
 		input.replaceAll("<","<").replaceAll(">",">");
 		return input;
 	}
-	
+
 }
 
 ```
