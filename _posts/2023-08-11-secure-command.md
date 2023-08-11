@@ -1,7 +1,7 @@
 ---
 title: '[ Java ] OS Command Injection'
 categories: ['Secure Coding', 'Java']
-date: 2023-08-11T13:00:00.000Z
+date: '2023-08-11'
 tag: ['Secure Coding', 'Java']
 ---
 ## **취약한 코드**
