@@ -1,6 +1,6 @@
 ---
 title: '[ Java ] OS Command Injection'
-date: '2023-08-11T13:00:00Z'
+date: '2023-08-11T13:00:00.000Z'
 categories: ['Secure Coding', 'Java']
 tag: ['Secure Coding', 'Java']
 ---
