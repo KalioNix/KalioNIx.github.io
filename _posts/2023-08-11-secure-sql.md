@@ -1,7 +1,7 @@
 ---
 title: '[ Java ] SQL Injection'
 categories: ['Secure Coding', 'Java']
-date: "2023-08-11 01:00:00""
+date: "2023-08-11 01:00:00"
 tag : ['Secure Coding', 'Java']
 ---
 ## **취약한 코드**
