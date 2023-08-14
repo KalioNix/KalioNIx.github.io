@@ -1,0 +1,56 @@
+---
+title: '2. 쓰기 방지'
+date: '2023-08-14 02:00:00'
+categories: ['Series', 'Digital Forensic']
+tag: ['forensic']
+---
+
+## **레지스트리 수정을 통한 쓰기 방지**
+---
+
+디지털 포렌식에서 이미지 생성 전 필수적인 단계이다.
+
+만약 쓰기 방지가 되어 있지 않다면 증거 자료의 무결성이 깨질 수 있다.
+
+<br>
+
+레지스트리 수정은 윈도우 시스템에서 가장 기초적인 방법으로, Encase등의 소프트웨어를 이용한 방법을 사용 할 수 없을 때를 대비하여 알고 있어야 하는 기본이다.
+
+<br>
+
+![](/assets/images/2023-08-14-forensic2md/2023-08-14-15-01-50.png)
+
+1. '윈도우키+R' 후 regedit를 입력하여 레지스트리 편집기를 실행시켜 준다.
+
+<br>
+
+![](/assets/images/2023-08-14-forensic2md/2023-08-14-15-10-21.png)
+
+
+```HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\StorageDevicePolicies```
+
+2. 해당 경로에 Key(폴더)가 있는지 확인한다.
+   
+<br>
+
+![](/assets/images/2023-08-14-forensic2md/2023-08-14-15-04-40.png)
+
+   없을 경우 마우스 우클릭 후 '새로 만들기' -> '키(K)' 클릭하고 이름을 StorageDevicePolicies라고 입력하면 된다.
+
+<br>
+
+![](/assets/images/2023-08-14-forensic2md/2023-08-14-15-12-23.png)
+
+3. StorageDevicePolicies 키 안에 '새로 만들기' -> 'DWORD(32비트) 값'을 클릭하여 값을 생성해준다.
+
+<br>
+
+![](/assets/images/2023-08-14-forensic2md/2023-08-14-15-14-15.png)
+
+4. 새로 만든 값 이름을 WriteProtect로 바꾸고 더블클릭하여 값 데이터를 1로 수정해준다.
+
+<br>
+
+![](/assets/images/2023-08-14-forensic2md/2023-08-14-15-20-07.png)
+
+이후 usb를 연결하여 파일을 생성할 경우 쓰기 금지를 확인 할 수 있다.
