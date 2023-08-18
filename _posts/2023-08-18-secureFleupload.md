@@ -1,5 +1,5 @@
 ---
-tilte: "[ Java ] File Upload Vulnerability"
+title: "[ Java ] File Upload Vulnerability"
 date: "2023-08-18 01:00:00"
 categories: ['Secure Coding', 'Java']
 tag: ['secure Coding', 'java']
