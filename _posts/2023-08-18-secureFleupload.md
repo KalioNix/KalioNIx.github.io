@@ -2,11 +2,12 @@
 title: "[ Java ] File Upload Vulnerability"
 date: "2023-08-18 01:00:00"
 categories: ['Secure Coding', 'Java']
-tag: ['secure Coding', 'java']
+tag: ['secure coding', 'java']
+---
+## **취약한 코드**
+
 ---
 
-## **취약한 코드**
----
 ```java
 package kr.co.openeg.lab.test.controller;
 
@@ -102,11 +103,16 @@ public class BoardController {
 <br>
 
 ## **취약점 분석**
+
 ---
+
+```java
+file.transferTo(uploadFile);
+```
 
 사용자가 업로드한 파일을 아무런 검사 없이 서버에 저장하고 있다.
 
-이런 경우 공격자는 악의적인 파일을 업로드하고 실행시킬 수 있다. 
+이런 경우 공격자는 악의적인 파일을 업로드하고 실행시킬 수 있다.
 
 <br>
 
@@ -118,6 +124,7 @@ public class BoardController {
 <br>
 
 ## **안전한 코드**
+
 ---
 
 ```java

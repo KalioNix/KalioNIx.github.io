@@ -2,7 +2,7 @@
 title: '[ Java ] SQL Injection'
 categories: ['Secure Coding', 'Java']
 date: "2023-08-11 01:00:00"
-tag : ['Secure Coding', 'Java']
+tag : ['secure coding', 'java']
 ---
 ## **취약한 코드**
 
@@ -41,7 +41,7 @@ public class DBRead {
 		if ( rs != null ) try { rs.close(); }catch(SQLException e){}
 		if ( st != null ) try { st.close(); }catch(SQLException e){}
 		if ( con != null ) try { con.close(); }catch(SQLException e){}
-      
+    
 		return result.toString();
 	}
 }
@@ -81,8 +81,9 @@ class EConnection {
 ## **취약점 분석**
 
 ---
-
-``rs = st.executeQuery("select * from board_member where userid='"+id+"' and userpw='"+passwd+"'");``
+```java
+rs = st.executeQuery("select * from board_member where userid='"+id+"' and userpw='"+passwd+"'");
+```
 
 사용자로부터 입력받은 id와 passwd 값을 직접 문자열에 연결하여 SQL 쿼리를 생성하고 실행하고 있다.
 
@@ -138,7 +139,7 @@ public class DBReadSec {
 		if ( rs != null ) try { rs.close(); }catch(SQLException e){}
 		if ( ps != null ) try { ps.close(); }catch(SQLException e){}
 		if ( con != null ) try { con.close(); }catch(SQLException e){}
-      
+    
 			return result.toString();
 	}
 }

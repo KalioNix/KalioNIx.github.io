@@ -2,7 +2,7 @@
 title: '[ Java ] XSS 1'
 categories: ['Secure Coding', 'Java']
 date: "2023-08-11 02:00:00"
-tag: ['Secure Coding', 'Java']
+tag: ['secure coding', 'java']
 ---
 ## **취약한 코드**
 
@@ -40,7 +40,7 @@ public class XSSController {
 
 ---
 
-```
+```java
 buffer.append(input);
 ```
 

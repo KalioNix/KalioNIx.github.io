@@ -2,7 +2,7 @@
 title: '[ Java ] OS Command Injection'
 categories: ['Secure Coding', 'Java']
 date: "2023-08-11 04:00:00"
-tag: ['Secure Coding', 'Java']
+tag: ['secure Coding', 'java']
 ---
 ## **취약한 코드**
 
@@ -75,7 +75,9 @@ public class CommandiController {
 
 ---
 
-``process = Runtime.getRuntime().exec(cmd);``
+```java
+process = Runtime.getRuntime().exec(cmd);
+```
 
 해당 코드에서 사용자의 입력을 검증하지 않고 명령어를 실행하고 있다.
 
