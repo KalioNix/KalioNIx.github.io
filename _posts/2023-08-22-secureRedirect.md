@@ -88,7 +88,7 @@ public class SecureRedirectController implements Controller {
 		allowedList.add("www.github.com");
 
 		if (url != null && !url.equals("")) {
-			/* 화이트리스트에 입력한 url이 포함되어 있는지 확인하는 메소드를 작성하세요. */
+			/* 화이트리스트에 입력한 url이 포함되어 있는지 확인하는 메소드를 작성 */
 			if (allowedList.contains(url)) {
 				response.sendRedirect(url);
 			} else {
