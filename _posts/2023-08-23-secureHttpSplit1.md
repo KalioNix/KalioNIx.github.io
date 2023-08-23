@@ -4,9 +4,10 @@ date: "2023-08-23 02:00:00"
 categories: ['Secure Coding', 'Java']
 tag: ['secure coding', 'java']
 ---
+## **취약한 코드**
 
-## **취약한 코드
 ---
+
 ```java
 package kr.co.openeg.lab.test.controller;
 
@@ -34,11 +35,11 @@ public class HTTPSplitController {
 } 
 ```
 
-
 <br>
 <br>
 
-## **취약점 분석
+## **취약점 분석**
+
 ---
 
 ```java
@@ -52,12 +53,11 @@ response.setHeader("checkData", input);
 
 외부 입력값에서 개행문자(\r\n)를 제거한 후 사용해야 한다.
 
-
-
 <br>
 <br>
 
-## **안전한 코드
+## **안전한 코드**
+
 ---
 
 ```java

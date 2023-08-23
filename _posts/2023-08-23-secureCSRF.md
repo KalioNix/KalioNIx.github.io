@@ -4,8 +4,8 @@ date: "2023-08-23 01:00:00"
 categories: ['Secure Coding', 'Java']
 tag: ['secure coding', 'java']
 ---
+## **취약한 코드**
 
-## **취약한 코드
 ---
 
 ```java
@@ -28,7 +28,7 @@ public class CsrfTestController {
 
 	@Autowired
 	private MemberService service;
-	
+
 	@RequestMapping(value="/test/csrf_test",produces = "application/text; charset=utf8")
 	@ResponseBody
 	public String testCSRF(HttpServletRequest request) {
@@ -45,26 +45,25 @@ public class CsrfTestController {
 <br>
 <br>
 
+## **취약점 분석**
 
-## **취약점 분석
 ---
 
 ```java
 String id=request.getParameter("id");
 ```
 
-어떤 형태의 요청이든지 기본적으로 특정 웹사이트에 대해 사용자가 인지하지 못한 상황에서 사용자의 의도와는 무관하게 공격자가 의도한 행위를 요청하는 CSRF 취약점을 가질 수 있다. 
+어떤 형태의 요청이든지 기본적으로 특정 웹사이트에 대해 사용자가 인지하지 못한 상황에서 사용자의 의도와는 무관하게 공격자가 의도한 행위를 요청하는 CSRF 취약점을 가질 수 있다.
 
 <br>
 
 이를 방지하기 위해선 CORS 허용 정책을 사용하거나, 입력화면이 요청되었을 때 임의의 토큰을 생성하여 세션에 저장했다가 요청 파라미터와 세션에 저장된 토큰을 비교해서 일치하는 경우에만 요청을 처리하는 방법이 있다.
 
-
 <br>
 <br>
 
+## **안전한 코드**
 
-## **안전한 코드
 ---
 
 ```java
@@ -87,7 +86,7 @@ public class CsrfTestController {
 
 	@Autowired
 	private MemberService service;
-	
+
 	@RequestMapping(value="/test/csrf_test",produces = "application/text; charset=utf8")
 	@ResponseBody
 	public String testCSRF(HttpServletRequest request) {
