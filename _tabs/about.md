@@ -20,7 +20,7 @@ order: 4
 
 #### github : https://github.com/KalioNix
 
-#### Blog : https://velog.io/@hyeonjinlee
+#### Blog : https://kalionix.github.io
 
 <br>
 
@@ -72,6 +72,7 @@ order: 4
 
 ---
 
+'23.08.31. 정보보안산업기사<br>
 '23.06.09. 정보처리산업기사<br>
 '22.06.10. 리눅스마스터 1급<br>
 '16.08.23. 정보처리기능사<br>
