@@ -1,6 +1,6 @@
 ---
 title: "[ Java ] 취약한 암호화 알고리즘 사용"
-date: "2023-08-25 02:00:00"
+date: "2023-09-22 01:00:00"
 categories: ['Secure Coding', 'Java']
 tag: ['secure coding' ,'java']
 ---
